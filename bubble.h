@@ -12,6 +12,7 @@ void display(int x[],int n){
 }
 
 void BubbleSort(int x[],int n){
+  clock_t tic = clock();
   int i,j,count;
   int swap_count=0;
   
@@ -25,7 +26,9 @@ void BubbleSort(int x[],int n){
       }
     }
     if(count==0) break;
-    display(x,n);
+    //display(x,n);
   }
+  clock_t toc = clock();
   printf("Bubblesort swap %d time\n",swap_count);
+  printf("Running Time: %f milliseconds\n", ((double)(toc - tic) / CLOCKS_PER_SEC)*1000);
 }
